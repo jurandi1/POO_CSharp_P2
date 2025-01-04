@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace POO_CSharp_P2
 {
@@ -16,6 +17,18 @@ namespace POO_CSharp_P2
         {
             return Preco * Quantidade;
         }
+
+        public override string ToString()
+        {
+            return Nome
+                + ", $ "
+                + Preco.ToString("F2", CultureInfo.InvariantCulture)
+                + ", "
+                + Quantidade
+                + " unidades, Total: $ "
+                + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
+        }
+
 
     }
 }
